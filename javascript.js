@@ -7,7 +7,6 @@ function dayPlanner() {
   var currentDay = $("#currentDay").text(
     moment().format("dddd, MMMM Do, h:mm A")
   );
-
   // For continous time
 
   moment().format("MMMM Do YYYY, h:mm:ss a");
@@ -18,11 +17,11 @@ function dayPlanner() {
   $(".time-block").each(function() {
     var elementTime = $(this).attr("data-time");
     if (hours > elementTime) {
-      $(this).css("background-color", "red");
+      $(this).css("background-color", "lightseagreen");
     } else if (hours < elementTime) {
-      $(this).css("background-color", "green");
+      $(this).css("background-color", "yellow");
     } else {
-      $(this).css("background-color", "grey");
+      $(this).css("background-color", "green");
     }
   });
 }
@@ -40,10 +39,29 @@ $(".save-btn").on("click", function() {
   localStorage.setItem(elementTime, currNote);
 });
 
+var x = document.getElementById("myAudio");
+function playAudio() {
+  x.play();
+}
+
 $(".time-block").each(function() {
   var elementTime = $(this).attr("data-time");
   var currNote = localStorage.getItem(elementTime);
   $(this)
     .find("textarea")
     .val(currNote);
+});
+$(document).ready(function() {
+  $(window).unload(saveSettings);
+  loadSettings();
+});
+function loadSettings();{
+  $("#textarea").val(localStorage);
+}
+function saveSettings();{
+ localStorage= $("#textarea").val();
+}
+$(window).on("unload", function(){
+  saveSettings();
+  loadSettings();
 });

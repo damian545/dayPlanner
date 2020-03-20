@@ -16,7 +16,7 @@ textarea {
 .jumbotron {
   text-shadow: 3px 3px black;
   text-align: center;
-  background-color: orange;
+  background-color: rgb(255, 81, 0);
   color: white;
   border-radius: 0;
   border-bottom: 10px solid black;
@@ -44,17 +44,17 @@ textarea {
 }
 
 .past {
-  background-color: #d3d3d3;
+  background-color: lightseagreen;
   color: white;
 }
 
 .present {
-  background-color: #ff6961;
+  background-color: yellow;
   color: white;
 }
 
 .future {
-  background-color: #77dd77;
+  background-color: green;
   color: white;
 }
 
@@ -69,4 +69,30 @@ textarea {
 .saveBtn i:hover {
   font-size: 20px;
   transition: all 0.3s ease-in-out;
+}
+input {
+  position: absolute;
+  width: 150px;
+  height: 20px;
+  color: white;
+}
+input:before {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  content: attr(data-date);
+  display: inline-block;
+  color: black;
+}
+input::-webkit-datetime-edit,
+input::-webkit-inner-spin-button,
+input::-webkit-clear-button {
+  display: none;
+}
+input::-webkit-calender-picker-indicator {
+  position: absolute;
+  top: 3px;
+  right: 0;
+  color: black;
+  opacity: 1;
 }
