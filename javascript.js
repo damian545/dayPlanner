@@ -50,6 +50,7 @@ $(document).ready(function() {
   $(window).text(saveSettings);
   loadSettings();
 });
+// An area to load and save settings.
 function loadSettings() {
   $("#textarea").val(localStorage);
 }
