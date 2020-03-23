@@ -8,7 +8,7 @@ textarea {
   background: transparent;
   border: none;
   resize: none;
-  color: #000000;
+  color: black;
   border-left: 1px solid black;
   padding: 10px;
 }
@@ -38,9 +38,9 @@ textarea {
 }
 
 .hour {
-  background-color: #ffffff;
+  background-color: white;
   color: blue;
-  border-top: 1px dashed #000000;
+  border-top: 1px dashed black;
 }
 
 .past {
@@ -62,7 +62,7 @@ textarea {
   border-left: 1px solid black;
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
-  background-color: #06aed5;
+  background-color: turquoise;
   color: white;
 }
 
@@ -83,69 +83,4 @@ input:before {
   content: attr(data-date);
   display: inline-block;
   color: black;
-}
-input::-webkit-datetime-edit,
-input::-webkit-inner-spin-button,
-input::-webkit-clear-button {
-  display: none;
-}
-input::-webkit-calender-picker-indicator {
-  position: absolute;
-  top: 3px;
-  right: 0;
-  color: black;
-  opacity: 1;
-}
-.clock {
-  width: 260px;
-  margin: 0 auto;
-  padding: 30px;
-  color: #fff;
-  background: #333;
-}
-.clock ul {
-  width: 250px;
-  margin: 0 auto;
-  padding: 0;
-  list-style: none;
-  text-align: center;
-}
-
-.clock ul li {
-  display: inline;
-  font-size: 3em;
-  text-align: center;
-  font-family: "Arial", Helvetica, sans-serif;
-  text-shadow: 0 2px 5px #55c6ff, 0 3px 6px #55c6ff, 0 4px 7px #55c6ff;
-}
-#Date {
-  font-family: "Arial", Helvetica, sans-serif;
-  font-size: 26px;
-  text-align: center;
-  text-shadow: 0 2px 5px #55c6ff, 0 3px 6px #55c6ff;
-  padding-bottom: 40px;
-}
-
-#point {
-  position: relative;
-  -moz-animation: mymove 1s ease infinite;
-  -webkit-animation: mymove 1s ease infinite;
-  padding-left: 10px;
-  padding-right: 10px;
-}
-
-/* Animasi Detik Kedap - Kedip */
-@-webkit-keyframes mymove {
-  0% {
-    opacity: 1;
-    text-shadow: 0 0 20px #00c6ff;
-  }
-  50% {
-    opacity: 0;
-    text-shadow: none;
-  }
-  100% {
-    opacity: 1;
-    text-shadow: 0 0 20px #00c6ff;
-  }
 }

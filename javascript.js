@@ -2,18 +2,18 @@ var min = "nine";
 var max = "seventeen";
 var currHr = "";
 console.log("test");
-// Function for running current time at top
+// Function for running current time at top.
 function dayPlanner() {
   var currentDay = $("#currentDay").text(
     moment().format("dddd, MMMM Do, h:mm A")
   );
-  // For continous time
+  // For continous time.
 
   moment().format("MMMM Do YYYY, h:mm:ss a");
   var date = new Date();
   var hours = date.getHours();
 
-  //  JQuery to determine color of hours
+  //  JQuery to determine color of hours past, present and future.
   $(".time-block").each(function() {
     var elementTime = $(this).attr("data-time");
     if (hours > elementTime) {
@@ -25,7 +25,7 @@ function dayPlanner() {
     }
   });
 }
-// Function to grab current info entered into each hour
+// Function to grab current info entered into each hour.
 dayPlanner();
 setInterval(dayPlanner, 60000);
 $(".save-btn").on("click", function() {
@@ -38,12 +38,7 @@ $(".save-btn").on("click", function() {
     .val();
   localStorage.setItem(elementTime, currNote);
 });
-
-var x = document.getElementById("myAudio");
-function playAudio() {
-  x.play();
-}
-
+// This is where I added a time block and date.
 $(".time-block").each(function() {
   var elementTime = $(this).attr("data-time");
   var currNote = localStorage.getItem(elementTime);
@@ -52,16 +47,17 @@ $(".time-block").each(function() {
     .val(currNote);
 });
 $(document).ready(function() {
-  $(window).unload(saveSettings);
+  $(window).text(saveSettings);
   loadSettings();
 });
-function loadSettings();{
+function loadSettings() {
   $("#textarea").val(localStorage);
 }
-function saveSettings();{
- localStorage= $("#textarea").val();
+function saveSettings() {
+  localStorage = $("#textarea").val();
 }
-$(window).on("unload", function(){
+// This is where the data is saved the user enters.
+$(window).on("unload", function() {
   saveSettings();
   loadSettings();
 });
